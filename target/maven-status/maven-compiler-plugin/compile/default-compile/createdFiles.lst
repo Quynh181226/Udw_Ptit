@@ -1,0 +1,17 @@
+com\example\udw\controller\AuthController.class
+com\example\udw\repository\ProductRepository.class
+com\example\udw\entity\User.class
+com\example\udw\controller\OrderController.class
+com\example\udw\repository\CartRepository.class
+com\example\udw\controller\ProductController.class
+com\example\udw\repository\OrderRepository.class
+com\example\udw\service\UserService.class
+com\example\udw\repository\UserRepository.class
+com\example\udw\entity\Cart.class
+com\example\udw\controller\CartController.class
+com\example\udw\entity\Order.class
+com\example\udw\service\CartService.class
+com\example\udw\service\OrderService.class
+com\example\udw\UdwApplication.class
+com\example\udw\service\ProductService.class
+com\example\udw\entity\Product.class

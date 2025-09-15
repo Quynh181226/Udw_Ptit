@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class UdwApplication {
 
     public static void main(String[] args) {
+
         SpringApplication.run(UdwApplication.class, args);
     }
 

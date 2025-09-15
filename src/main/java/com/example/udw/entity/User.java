@@ -1,59 +1,44 @@
-package com.example.udw.entity;
-//
-//import lombok.Data;
-//import jakarta.persistence.Id;
-//import jakarta.persistence.Entity;
-//
-//@Entity
-//@Data
-//// ADMIN or CUSTOMER
-//public class User {
-//    @Id
-//    private Long id;
-//    private String username;
-//    private String password;
-//    private String email;
-//    private String role;
-//}
-import jakarta.persistence.*;
-import lombok.Data;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
+// - Định nghĩa entity User cho bảng users trong database
+// - Lưu thông tin người dùng: id, username, password (hashed), email, role (ADMIN/CUSTOMER)
+// - Role dùng để phân quyền: ADMIN (quản lý sản phẩm), CUSTOMER (xem, đặt hàng)
 
-import java.util.Collection;
-import java.util.List;
+package com.example.udw.entity;
+
+import jakarta.persistence.*;
 
 @Entity
-@Data
-public class User implements UserDetails {
+@Table(name = "users")
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true)
     private String username;
-
-    // hashed
     private String password;
-
-    @Column(unique = true)
     private String email;
-
-    // "ADMIN" or "CUSTOMER"
     private String role;
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority("ROLE_" + role));
+    public User() {}
+
+    public User(String username, String password, String email, String role) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.role = role;
     }
 
-    @Override
-    public boolean isAccountNonExpired() { return true; }
-    @Override
-    public boolean isAccountNonLocked() { return true; }
-    @Override
-    public boolean isCredentialsNonExpired() { return true; }
-    @Override
-    public boolean isEnabled() { return true; }
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+
+    public String getUsername() { return username; }
+    public void setUsername(String username) { this.username = username; }
+
+    public String getPassword() { return password; }
+    public void setPassword(String password) { this.password = password; }
+
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
+
+    public String getRole() { return role; }
+    public void setRole(String role) { this.role = role; }
 }
