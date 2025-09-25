@@ -1,6 +1,6 @@
-// - Định nghĩa entity Product cho bảng products
+// - Định nghĩa entity Product cho bảng products trong database sử dụng JPA, ánh xạ các trường id, name, description, price, stock
 // - Lưu thông tin sản phẩm: id, name, description, price, stock
-// - Dùng cho CUSTOMER (xem, tạo/sửa/xóa)
+// - Dùng cho ADMIN (tạo/sửa/xóa), CUSTOMER (xem), xử lý ngoại lệ khi ánh xạ dữ liệu không hợp lệ
 
 package com.example.udw.entity;
 

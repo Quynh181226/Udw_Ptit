@@ -1,6 +1,5 @@
-// - Xử lý logic nghiệp vụ cho Order
-// - Tạo đơn hàng, xem lịch sử đơn hàng (cho CUSTOMER)
-
+// - Xử lý logic nghiệp vụ cho Order sử dụng Spring Service
+// - Tạo đơn hàng (cho CUSTOMER) với JPA, xem lịch sử đơn hàng, xử lý ngoại lệ khi username/productId/quantity không hợp lệ hoặc stock không đủ
 package com.example.udw.service;
 
 import com.example.udw.entity.Order;
@@ -32,29 +31,38 @@ public class OrderService {
         if (username == null || username.isEmpty()) {
             throw new IllegalArgumentException("Username is required");
         }
+
         if (productId == null) {
             throw new IllegalArgumentException("Product ID is required");
         }
+
         if (quantity == null || quantity <= 0) {
             throw new IllegalArgumentException("Quantity must be greater than 0");
         }
+
         User user = userRepository.findByUsername(username)
                 .orElseThrow(() -> new IllegalArgumentException("User not found"));
+
         if (!user.getRole().equals("CUSTOMER")) {
             throw new IllegalArgumentException("Only CUSTOMER can create order");
         }
+
         Product product = productRepository.findById(productId)
                 .orElseThrow(() -> new IllegalArgumentException("Product not found"));
+
         if (product.getStock() < quantity) {
             throw new IllegalArgumentException("Not enough stock");
         }
+
         if(product==null) {
             throw new IllegalArgumentException("Product empty");
         }
+
         BigDecimal totalPrice = product.getPrice().multiply(BigDecimal.valueOf(quantity));
         Order order = new Order(user, product, quantity, totalPrice, LocalDateTime.now());
         product.setStock(product.getStock() - quantity);
         productRepository.save(product);
+
         return orderRepository.save(order);
     }
 
@@ -62,15 +70,14 @@ public class OrderService {
         if (username == null || username.isEmpty()) {
             throw new IllegalArgumentException("Username is required");
         }
+
         User user = userRepository.findByUsername(username)
                 .orElseThrow(() -> new IllegalArgumentException("User not found"));
+
         if (!user.getRole().equals("CUSTOMER")) {
             throw new IllegalArgumentException("Only CUSTOMER can view orders");
         }
-//        Product product = productRepository.;
-//        if(product==null) {
-//            throw new IllegalArgumentException("Product empty");
-//        }
+
         return orderRepository.findByUser(user);
     }
 }

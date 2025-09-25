@@ -1,6 +1,6 @@
-// - Định nghĩa entity Order cho bảng orders
-// - Lưu thông tin đơn hàng: id, user, product, quantity, totalPrice
-
+// - Định nghĩa entity Order cho bảng orders trong database sử dụng JPA, ánh xạ các trường id, user, product, quantity, totalPrice, orderDate
+// - Lưu thông tin đơn hàng: id, user, product, quantity, totalPrice, orderDate
+// - Dùng cho CUSTOMER (tạo, xem), xử lý ngoại lệ khi ánh xạ dữ liệu không hợp lệ
 package com.example.udw.entity;
 
 import jakarta.persistence.*;

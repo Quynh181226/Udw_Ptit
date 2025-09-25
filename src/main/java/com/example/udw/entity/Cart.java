@@ -1,6 +1,6 @@
-// - Định nghĩa entity Cart cho bảng carts
+// - Định nghĩa entity Cart cho bảng carts trong database sử dụng JPA, ánh xạ các trường id, user, products với quan hệ 1-1 và Many-to-Many
 // - Lưu giỏ hàng của user, liên kết 1-1 với User, chứa danh sách sản phẩm
-
+// - Dùng cho CUSTOMER (thêm/xem), xử lý ngoại lệ khi ánh xạ dữ liệu không hợp lệ
 package com.example.udw.entity;
 
 import jakarta.persistence.*;

@@ -16,13 +16,12 @@ POST http://localhost:8080/api/auth/register
 Content-Type: application/json
 
 {
-  "username": "customer1",
-  "password": "123456",
-  "email": "customer1@example.com",
+  "username": "customerU",
+  "password": "823456",
+  "email": "customerU@gmail.com",
   "role": "CUSTOMER"
 }
 
-<> 2025-09-06T231331.400.json
 <> 2025-09-06T231317.400.json
 <> 2025-09-06T231117.200.json
 
@@ -36,9 +35,6 @@ Content-Type: application/json
 }
 
 <> 2025-09-06T231859.200.json
-<> 2025-09-06T231206.200.json
-<> 2025-09-06T231144.200.json
-<> 2025-09-06T231129.200.json
 
 ### Đăng nhập với tài khoản CUSTOMER
 POST http://localhost:8080/api/auth/login
@@ -64,11 +60,8 @@ Cookie:  JSESSIONID=C98BD694AA3CFF7D7BA5267A11223DA1
   "stock": 10
 }
 
-<> 2025-09-09T095926.401.json
-<> 2025-09-09T095856.401.json
-<> 2025-09-09T084434.401.json
-<> 2025-09-09T084309.401.json
 <> 2025-09-09T084134.401.json
+<> 2025-09-15T075653.200.json
 
 ### Sửa sản phẩm
 PUT http://localhost:8080/api/products/1
@@ -76,14 +69,14 @@ Content-Type: application/json
 Cookie:  JSESSIONID=C98BD694AA3CFF7D7BA5267A11223DA1
 
 {
-  "name": "Laptop Pro",
+  "name": "Laptop ProMax",
   "description": "Updated laptop",
-  "price": 1200.0,
+  "price": 12000000,
   "stock": 15
 }
 
 ### Xóa sản phẩm
-DELETE http://localhost:8080/api/products/1
+DELETE http://localhost:8080/api/products/2
 Content-Type: application/json
 Cookie:  JSESSIONID=C98BD694AA3CFF7D7BA5267A11223DA1
 
@@ -104,7 +97,7 @@ Cookie: JSESSIONID=CF6250EB34737F6066189E2D769DE84D
 ### Xem giỏ hàng
 GET http://localhost:8080/api/cart
 Content-Type: application/json
-Cookie: JSESSIONID={CF6250EB34737F6066189E2D769DE84D
+Cookie: JSESSIONID=CF6250EB34737F6066189E2D769DE84D
 
 ### Tạo đơn hàng
 POST http://localhost:8080/api/orders

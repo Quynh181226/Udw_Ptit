@@ -1,6 +1,6 @@
 package com.example.udw.repository;
 
-// - Repository cho bảng carts
+// - Repository cho bảng carts sử dụng Spring Data JPA
 // - Tìm giỏ hàng theo user
 
 import com.example.udw.entity.Cart;

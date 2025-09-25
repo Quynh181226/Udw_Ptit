@@ -1,6 +1,6 @@
-// - Xử lý endpoint cho Order
+// - Xử lý endpoint cho Order sử dụng Spring REST Controller
 // - CUSTOMER: Tạo đơn hàng, xem lịch sử đơn hàng
-// - Phân quyền: Kiểm tra session username và role CUSTOMER
+// - Phân quyền: Kiểm tra session username và role CUSTOMER, xử lý ngoại lệ khi dữ liệu không hợp lệ
 
 package com.example.udw.controller;
 

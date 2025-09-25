@@ -1,5 +1,5 @@
-// - Xử lý logic nghiệp vụ cho Cart
-// - Thêm sản phẩm vào giỏ, lấy giỏ của user (cho CUSTOMER)
+// - Xử lý logic nghiệp vụ cho Cart sử dụng Spring Service
+// - Thêm sản phẩm vào giỏ (cho CUSTOMER) với JPA, lấy giỏ của user, xử lý ngoại lệ khi username/productId không hợp lệ hoặc stock <= 0
 
 package com.example.udw.service;
 

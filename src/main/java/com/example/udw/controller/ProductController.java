@@ -1,8 +1,7 @@
-// - Xử lý endpoint cho Product
+// - Xử lý endpoint cho Product sử dụng Spring REST Controller
 // - ADMIN: Tạo, sửa, xóa sản phẩm
 // - CUSTOMER: Xem danh sách sản phẩm
-// - Phân quyền: Kiểm tra session username và role
-
+// - Phân quyền: Kiểm tra session username và role, xử lý ngoại lệ khi dữ liệu không hợp lệ
 package com.example.udw.controller;
 
 import com.example.udw.entity.Product;

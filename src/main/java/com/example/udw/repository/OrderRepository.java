@@ -1,8 +1,7 @@
 package com.example.udw.repository;
 
-// - Repository cho bảng orders
+// - Repository cho bảng orders sử dụng Spring Data JPA
 // - Tìm danh sách đơn hàng theo user
-
 import com.example.udw.entity.Order;
 import com.example.udw.entity.User;
 import java.util.List;

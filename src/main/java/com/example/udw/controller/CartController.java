@@ -1,6 +1,6 @@
-// - Xử lý endpoint cho Cart
+// - Xử lý endpoint cho Cart sử dụng Spring REST Controller
 // - CUSTOMER: Thêm sản phẩm vào giỏ, xem giỏ
-// - Phân quyền: Kiểm tra session username và role CUSTOMER
+// - Phân quyền: Kiểm tra session username và role CUSTOMER, xử lý ngoại lệ IllegalArgumentException khi dữ liệu không hợp lệ
 
 package com.example.udw.controller;
 

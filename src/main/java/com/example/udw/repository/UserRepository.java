@@ -1,4 +1,4 @@
-// - Repository cho bảng users
+// - Repository cho bảng users sử dụng Spring Data JPA
 // - Cung cấp phương thức tìm user bằng username và email
 
 package com.example.udw.repository;

@@ -1,7 +1,6 @@
-// - Định nghĩa entity User cho bảng users trong database
-// - Lưu thông tin người dùng: id, username, password (hashed), email, role (ADMIN/CUSTOMER)
-// - Role dùng để phân quyền: ADMIN (quản lý sản phẩm), CUSTOMER (xem, đặt hàng)
-
+// - Định nghĩa entity User cho bảng users trong database sử dụng JPA, ánh xạ các trường id, username, password, email, role
+// - Lưu thông tin người dùng: id, username, password, email, role (ADMIN/CUSTOMER)
+// - Role dùng để phân quyền: ADMIN (quản lý sản phẩm), CUSTOMER (xem, đặt hàng), xử lý ngoại lệ khi ánh xạ dữ liệu không hợp lệ
 package com.example.udw.entity;
 
 import jakarta.persistence.*;
@@ -12,7 +11,6 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String username;
     private String password;
     private String email;

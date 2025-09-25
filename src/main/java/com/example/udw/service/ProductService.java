@@ -21,13 +21,17 @@ public class ProductService {
         if (name == null || name.isEmpty()) {
             throw new IllegalArgumentException("Product name is required");
         }
+
         if (price == null || price <= 0) {
             throw new IllegalArgumentException("Price must be greater than 0");
         }
+
         if (stock == null || stock < 0) {
             throw new IllegalArgumentException("Stock cannot be negative");
         }
+
         Product product = new Product(name, description, BigDecimal.valueOf(price), stock);
+
         return productRepository.save(product);
     }
 
@@ -35,21 +39,26 @@ public class ProductService {
         if (id == null) {
             throw new IllegalArgumentException("Product ID is required");
         }
+
         if (name == null || name.isEmpty()) {
             throw new IllegalArgumentException("Product name is required");
         }
+
         if (price == null || price <= 0) {
             throw new IllegalArgumentException("Price must be greater than 0");
         }
+
         if (stock == null || stock < 0) {
             throw new IllegalArgumentException("Stock cannot be negative");
         }
+
         Product product = productRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Product not found"));
         product.setName(name);
         product.setDescription(description);
         product.setPrice(BigDecimal.valueOf(price));
         product.setStock(stock);
+
         return productRepository.save(product);
     }
 
@@ -57,6 +66,7 @@ public class ProductService {
         if (id == null) {
             throw new IllegalArgumentException("Product ID is required");
         }
+
         Product product = productRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Product not found"));
         productRepository.delete(product);
